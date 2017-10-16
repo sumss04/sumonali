@@ -1,0 +1,8 @@
+"select employee_id from employees "
+				+ "union "
+				+ "select department_id from departments"
+
+
+"Select * From (select employee_id,first_name,last_name,salary, "
+				+ "DENSE_RANK() over(ORDER BY salary desc)  rank from employees) "
+				+ "Where rank= 9"
